@@ -101,3 +101,18 @@ DB_DATABASE=primepix_db
 DB_USERNAME=root
 DB_PASSWORD=
 ```
+
+- Install [tailwindcss for Laravel](https://tailwindcss.com/docs/guides/laravel)
+
+```shell
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+## Routes
+
+- You can check the routes by running
+
+```shell
+php artisan route:list
+```
