@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -9,6 +11,9 @@ export default {
         extend: {
             width: {
                 96: "24rem",
+            },
+            fontFamily: {
+                sans: ["Poppins", ...defaultTheme.fontFamily.sans],
             },
         },
     },
