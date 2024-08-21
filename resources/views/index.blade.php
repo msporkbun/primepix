@@ -12,9 +12,7 @@
                             <img src="{{ 'https://image.tmdb.org/t/p/w500/'.$movie['poster_path'] }}" alt="{{ $movie['title'] }} poster" class="hover:opacity-75 transition ease-in-out duration-200">
                         </a>
                         <div class="mt-2">
-                            <a href="#" class="text-lg mt-2 hover:text-gray:300">{{
-                                $movie['title']
-                            }}</a>
+                            <a href="#" class="text-lg mt-2 hover:text-gray:300">{{ $movie['title'] }}</a>
                             <div class="flex items-center text-gray-400 text-sm mt-1">
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="fill-current w-4 text-yellow-500">
@@ -24,8 +22,11 @@
                                 <span class="ml-1">{{ round($movie['vote_average'] * 10).'%' }}</span>
                                 <span class="mx-2">|</span>
                                 <span>{{ \Carbon\Carbon::parse($movie['release_date'])->format('d M Y')}}</span>
-                                <span class="mx-2">|</span>
-                                <span>Action, Thriller</span>
+                            </div>
+                            <div class="text-gray-400 text-sm">
+                                @foreach ($movie['genre_ids'] as $genre)
+                                    {{ $genres->get($genre) }}@if (!$loop->last), @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>

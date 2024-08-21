@@ -20,10 +20,15 @@ class MoviesController extends Controller
             ->get('https://api.themoviedb.org/3/genre/movie/list')
             ->json()['genres'];
 
+        $genres = collect($genresArray)->mapWithKeys(function ($genre) {
+            return [$genre['id'] => $genre['name']];
+        });
+
         dump($genres);
 
         return view('index', [
-            'popularMovies' => $popularMovies
+            'popularMovies' => $popularMovies,
+            'genres' => $genres,
         ]);
     }
 
