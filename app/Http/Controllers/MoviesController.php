@@ -16,9 +16,15 @@ class MoviesController extends Controller
             ->get('https://api.themoviedb.org/3/movie/popular')
             ->json()['results'];
 
-        // dump($popularMovies);
+        $genresArray = Http::withToken(config('services.tmdb.token'))
+            ->get('https://api.themoviedb.org/3/genre/movie/list')
+            ->json()['genres'];
 
-        return view('index');
+        dump($genres);
+
+        return view('index', [
+            'popularMovies' => $popularMovies
+        ]);
     }
 
     /**
