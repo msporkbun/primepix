@@ -60,67 +60,37 @@
         <div class="container mx-auto px-4 py-16">
             <h2 class="text-4xl font-semibold">Cast</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                <!-- card:component -->
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/parasite.jpg" alt="parasite" class="hover:opacity-75 transition ease-in-out duration-200">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray:300">Real Name</a>
-                        <div class="text-sm text-gray-400">Character Name</div>
-                    </div>
-                </div>
-                <!-- card:component -->
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/parasite.jpg" alt="parasite" class="hover:opacity-75 transition ease-in-out duration-200">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray:300">Real Name</a>
-                        <div class="text-sm text-gray-400">Character Name</div>
-                    </div>
-                </div>
-                <!-- card:component -->
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/parasite.jpg" alt="parasite" class="hover:opacity-75 transition ease-in-out duration-200">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray:300">Real Name</a>
-                        <div class="text-sm text-gray-400">Character Name</div>
-                    </div>
-                </div>
-                <!-- card:component -->
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/parasite.jpg" alt="parasite" class="hover:opacity-75 transition ease-in-out duration-200">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray:300">Real Name</a>
-                        <div class="text-sm text-gray-400">Character Name</div>
-                    </div>
-                </div>
-                <!-- card:component -->
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/parasite.jpg" alt="parasite" class="hover:opacity-75 transition ease-in-out duration-200">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray:300">Real Name</a>
-                        <div class="text-sm text-gray-400">Character Name</div>
-                    </div>
-                </div>
-                <!-- card:component -->
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/parasite.jpg" alt="parasite" class="hover:opacity-75 transition ease-in-out duration-200">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray:300">Real Name</a>
-                        <div class="text-sm text-gray-400">Character Name</div>
-                    </div>
-                </div>
+                @foreach ($movie['credits']['cast'] as $cast)
+                    @if ($loop->index < 5)
+                        <div class="mt-8">
+                            <a href="#">
+                                <img class="hover:opacity-75 transition ease-in-out duration-200" src="https://image.tmdb.org/t/p/w300/{{ $cast['profile_path'] }}" alt="{{ $cast['name'] }} Photo" >
+                            </a>
+                            <div class="mt-2">
+                                <a href="#" class="text-lg mt-2 hover:text-gray:300">{{ $cast['name'] }}</a>
+                                <div class="text-sm text-gray-400">{{ $cast['character'] }}</div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div> <!-- end movie-cast -->
+
+    <div class="movie-images">
+        <div class="container mx-auto px-4 py-16">
+            <h2 class="text-4xl font-semibold">Images</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                @foreach ($movie['images']['backdrops'] as $image)
+                    @if ($loop->index < 9)
+                        <div class="mt-8">
+                            <a href="#">
+                                <img class="hover:opacity-75 transition ease-in-out duration-200" src="https://image.tmdb.org/t/p/w500/{{ $image['file_path'] }}" alt="{{ $movie['title'] }} Image" >
+                            </a>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+    </div> <!-- end movie-images -->
 @endsection
