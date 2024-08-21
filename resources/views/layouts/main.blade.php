@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PrimePix</title>
     @vite('resources/css/app.css')
+    @livewireStyles
 </head>
 <body class="dark:bg-gray-900 dark:text-white">
     <nav class="border-b border-gray-800">
@@ -27,9 +28,7 @@
             </ul>
             <div class="flex flex-col md:flex-row items-center">
                 <!-- nav:search -->
-                <div class="relative">
-                    <input type="text" class="bg-gray-800 rounded-full w-64 px-4 pl-8 py-1 focus:outline-none focus:shadow-outline" placeholder="Search">
-                </div>
+                <livewire:search-dropdown>
                 <!-- nav:profile -->
                 <div class="md:ml-4 mt-3 md:mt-0">
                     <a href="#">
@@ -40,5 +39,6 @@
         </div>
     </nav>
     @yield('content')
+    @livewireScripts
 </body>
 </html>
