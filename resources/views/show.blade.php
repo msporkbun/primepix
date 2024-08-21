@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+    <livewire:search-dropdown />
     <div class="movie-info border-b border-gray-800">
         <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
             <div class="flex-none">

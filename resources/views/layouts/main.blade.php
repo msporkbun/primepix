@@ -27,8 +27,7 @@
                 </li>
             </ul>
             <div class="flex flex-col md:flex-row items-center">
-                <!-- nav:search -->
-                <livewire:search-dropdown>
+                <livewire:search-dropdown />
                 <!-- nav:profile -->
                 <div class="md:ml-4 mt-3 md:mt-0">
                     <a href="#">
