@@ -1,5 +1,15 @@
 # PrimePix - A Laravel Project
 
+## Getting Started
+
+If you have got everything installed then you may just run the make command.
+
+```bash
+make
+```
+
+## Otherwise, here is a step-by-step guide
+
 - Install Homebrew
 
 ```shell
