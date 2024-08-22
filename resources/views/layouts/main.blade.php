@@ -11,7 +11,6 @@
     @livewireStyles
 </head>
 <body class="dark:bg-gray-900 dark:text-white">
-    @livewire('navbar')
     @yield('content')
     @livewireScripts
 </body>
