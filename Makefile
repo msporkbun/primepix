@@ -1,15 +1,10 @@
-setup: scripts install db start
+setup: remove install start
+
+remove: remove-composer remove-npm
 
 install: install-composer install-npm
 
 start: start-vite start-php
-
-db: db-create db-migrate
-
-scripts: scripts-chmod
-
-scripts-chmod:
-	chmod +x scripts/*
 
 install-composer:
 	composer install
@@ -23,9 +18,8 @@ start-vite:
 start-php:
 	php artisan serve &
 
-db-create:
-	sh scripts/create_database.sh
+remove-composer:
+	rm -rf vendor
 
-db-migrate:
-	php artisan migrate
-
+remove-npm:
+	rm -rf node_modules
