@@ -8,6 +8,11 @@ If you have got everything installed then you may just run the make command.
 make
 ```
 
+Then you will be able to access the Laravel Project at one of the following:
+- `https://primepix.test` if you are using Valet
+- `http://localhost:8000` if you are using PHP built-in server
+- `http://localhost` if you are using the Laravel Project directly
+
 ## Otherwise, here is a step-by-step guide
 
 - Install Homebrew
