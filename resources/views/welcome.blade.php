@@ -17,23 +17,7 @@
         <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
             <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <header class="grid grid-cols-2 items-center gap-2 py-10">
-                        <div class="text-blue-200 font-bold text-xl">
-                            <span class="text-xl"><a href="#">PrimePix</a></span>
-                            <span class="text-md">
-                                <a
-                                    href="{{ route('movies.index') }}"
-                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                >
-                                    Movies
-                                </a>
-                            </span>
-                        </div>
-                        @if (Route::has('login'))
-                            <livewire:welcome.navigation />
-                        @endif
-                    </header>
-
+                    <livewire:welcome.header />
                     <main class="mt-6">
                         <div class="flex items-center justify-center bg-cover bg-center">
                             <div class="text-center px-6 sm:px-8 lg:px-10 max-w-2xl bg-opacity-90 bg-gray-700 rounded-lg py-12 shadow-lg backdrop-blur">
