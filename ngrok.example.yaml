@@ -1,0 +1,9 @@
+authtoken: ${NGROK_AUTHTOKEN}
+version: 2
+tunnels:
+  site:
+    hostname: ${NGROK_TUNNEL_SITE_HOSTNAME}
+    addr: 8000
+    proto: http
+    schemes:
+      - https
