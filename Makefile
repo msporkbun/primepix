@@ -1,4 +1,5 @@
-start: remove install build serve
+start-dev: remove install dev
+start-prod: remove install build serve
 
 ################################
 #            Serve             #
