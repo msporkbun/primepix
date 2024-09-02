@@ -1,22 +1,36 @@
-setup: remove install start
+start: remove install build serve
 
+################################
+#            Serve             #
+################################
+build:
+	npm run build
+
+serve:
+	php artisan serve
+
+################################
+#          Development         #
+################################
+dev: dev-vite dev-php
+
+dev-vite:
+	npm run dev &
+
+dev-php:
+	php artisan serve &
+
+################################
+#             Setup            #
+################################
 remove: remove-composer remove-npm
-
 install: install-composer install-npm
-
-start: start-vite start-php
 
 install-composer:
 	composer install
 
 install-npm:
 	npm install
-
-start-vite:
-	npm run dev &
-
-start-php:
-	php artisan serve &
 
 remove-composer:
 	rm -rf vendor
