@@ -38,3 +38,9 @@ remove-composer:
 
 remove-npm:
 	rm -rf node_modules
+
+db-chmod:
+	chmod +x ./scripts/create-database.sh
+
+db-create:
+	./scripts/create-database.sh
